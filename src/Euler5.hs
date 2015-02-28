@@ -2,15 +2,7 @@ module Euler5 where
 
 import Data.List
 import qualified Data.Map as Map
-
--- Stolen from #3
-smallestPrimeFactor :: Int -> Int
-smallestPrimeFactor num = [ x | x <- [1..], num `mod` x == 0 ] !! 1
-
-getPrimeFactors :: [Int] -> Int -> [Int]
-getPrimeFactors factors 1 = factors
-getPrimeFactors factors x = getPrimeFactors (factor : factors) (x `div` factor)
-    where factor = smallestPrimeFactor x
+import Primes
 
 
 -- #haskell is crazy and I don't understand these
