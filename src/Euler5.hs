@@ -23,7 +23,7 @@ lowestCommonMultiple nums = foldr (\x acc -> (fst x ^ snd x) * acc) 1 primes
     where primes = map (\x -> (x, getMaxLength $ filter (firstIs x) flatPrimes)) nums
           flatPrimes = group . concat $ map (getPrimeFactors []) nums
 
-          firstIs x = (\y -> y !! 0 == x)
+          firstIs x y = y !! 0 == x
           getMaxLength = foldr (\x acc -> max acc (length x)) 0
 
 main :: IO ()
